@@ -32,7 +32,8 @@ body {
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-family: 'Open Sans', sans-serif; }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -149,4 +150,7 @@ body {
   width: 320px;
   height: 214px; }
   .floating-image img {
-    border: 10px solid #fff; }
+    border: 5px solid #2b542c; }
+
+#calendar-anchor {
+  padding: 0 15% 0 15%; }

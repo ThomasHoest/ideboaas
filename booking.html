@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +9,10 @@
   <!--<link rel="icon" href="../../favicon.ico">-->
 
   <title>Cover Template for Bootstrap</title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link href="content/vendor/bootstrap.min.css" rel="stylesheet">
   <link href="content/sass/ideboaas.css" rel="stylesheet">
+  <link rel='stylesheet' href='content/vendor/fullcalendar.css' />
+
 </head>
 
 <body>
@@ -29,8 +29,8 @@
         <div class="inner">
           <h3 class="masthead-brand">Ideboaas</h3>
           <ul class="nav masthead-nav">
-            <li class="active"><a href="main.html">Home</a></li>
-            <li><a href="booking.html">Booking</a></li>
+            <li><a href="main.html">Home</a></li>
+            <li class="active"><a href="booking.html">Booking</a></li>
             <li><a href="billeder.html">Billeder</a></li>
           </ul>
         </div>
@@ -38,17 +38,13 @@
       </div>
 
       <div class="inner cover">
-        <h1 class="cover-heading">Den gamle skole i Ideboås</h1>
-        <p class="lead">En eller anden indledning</p>
-
+        <h1 class="cover-heading">Booking</h1>
+        <div id="calendar-anchor"></div>
       </div>
-      <!--<div class="floating-image">
-        <img src="content/images/huset.jpg"/>
-      </div>-->
 
       <div class="mastfoot">
         <div class="inner">
-          <p>By Thomas Andersen with Twitter Boostrap</p>
+          <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
         </div>
       </div>
 
@@ -61,5 +57,8 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="scripts/vendor/bootstrap.min.js"></script>
+<script src='scripts/vendor/moment.min.js'></script>
+<script src='scripts/vendor/fullcalendar.min.js'></script>
+<script src='scripts/booking.js'></script>
 </body>
 </html>
