@@ -3,6 +3,14 @@
  */
 $(document).ready(function() {
   $('#calendar-anchor').fullCalendar({
-    aspectRatio: 3
+    aspectRatio: 3,
+    events: [
+      {
+        title  : 'Some booking',
+        start  : '2014-08-17',
+        end    : '2014-08-27',
+        color: 'blue'
+      }
+    ]
   })
 });

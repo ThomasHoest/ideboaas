@@ -152,5 +152,9 @@ body {
   .floating-image img {
     border: 5px solid #2b542c; }
 
-#calendar-anchor {
-  padding: 0 15% 0 15%; }
+.calendar-wrapper {
+  padding: 20px;
+  background: rgba(68, 68, 68, 0.4);
+  margin: 0 15% 0 15%; }
+  .calendar-wrapper #calendar-anchor {
+    opacity: 1; }

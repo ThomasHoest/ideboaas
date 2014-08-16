@@ -1,3 +1,11 @@
-#calendar-anchor{
-  padding: 0 15% 0 15%;
+.calendar-wrapper{
+  padding: 20px;
+  background: rgba(68, 68, 68, 0.4);
+  margin: 0 15% 0 15%;
+
+  #calendar-anchor{
+    opacity: 1;
+
+  }
 }
+
