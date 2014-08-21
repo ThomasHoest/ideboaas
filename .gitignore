@@ -1,1 +1,5 @@
 .idea/*
+ideboaas/.idea/*
+ideboaas/bin/*
+ideboaas/obj/*/*
+packages/*/*
