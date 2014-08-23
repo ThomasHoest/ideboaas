@@ -3,3 +3,4 @@ ideboaas/.idea/*
 ideboaas/bin/*
 ideboaas/obj/*/*
 packages/*/*
+*.suo
