@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using WebApplication2.Models;
+using IdeboaasWeb.Models;
 
-namespace WebApplication2.Controllers
+namespace IdeboaasWeb.Controllers
 {
     [Authorize]
     public class AccountController : Controller

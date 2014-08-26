@@ -7,9 +7,9 @@ using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using System;
-using WebApplication2.Models;
+using IdeboaasWeb.Models;
 
-namespace WebApplication2
+namespace IdeboaasWeb
 {
     public partial class Startup
     {

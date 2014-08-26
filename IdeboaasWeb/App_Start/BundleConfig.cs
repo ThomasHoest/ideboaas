@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace WebApplication2
+namespace IdeboaasWeb
 {
   public class BundleConfig
   {
@@ -15,6 +15,9 @@ namespace WebApplication2
                   "~/Scripts/vendor/moment.min.js",
                   "~/Scripts/vendor/fullcalender.js"
                   ));
+
+      bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                  "~/Scripts/jquery.validate*"));
 
       bundles.Add(new StyleBundle("~/Content/css").Include(
         "~/Content/vendor/bootstrap.css",

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApplication2.Models
+namespace IdeboaasWeb.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
