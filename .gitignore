@@ -4,3 +4,5 @@ ideboaas/bin/*
 ideboaas/obj/*/*
 packages/*/*
 *.suo
+IdeboaasWeb/obj/*
+IdeboaasWeb/bin/*
