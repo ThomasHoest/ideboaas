@@ -175,6 +175,9 @@
     <Content Include="Content\images\background.jpg" />
     <Content Include="Content\images\huset.jpg" />
     <Content Include="Content\sass\ideboaas.css" />
+    <Content Include="Content\sass\ideboaas.min.css">
+      <DependentUpon>ideboaas.css</DependentUpon>
+    </Content>
     <Content Include="Content\vendor\bootstrap-theme.css" />
     <Content Include="Content\vendor\bootstrap-theme.min.css" />
     <Content Include="Content\vendor\bootstrap.css" />
@@ -196,6 +199,9 @@
     <Content Include="Content\sass\views\_view.main.scss" />
     <Content Include="Content\vendor\bootstrap-theme.css.map" />
     <Content Include="Content\vendor\bootstrap.css.map" />
+    <Content Include="Content\sass\ideboaas.css.map">
+      <DependentUpon>ideboaas.css</DependentUpon>
+    </Content>
     <None Include="Scripts\vendor\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\vendor\jquery-1.10.2.js" />
     <Content Include="Scripts\vendor\jquery-1.10.2.min.js" />

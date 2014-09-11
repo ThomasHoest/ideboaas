@@ -1,5 +1,5 @@
-html {
-  background: url("/Content/images/background.jpg") no-repeat center center fixed;
+﻿html {
+  background: url('../images/background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -24,8 +24,7 @@ a:focus, a:hover {
 /*
  * Base structure
  */
-html,
-body {
+html, body {
   height: 100%;
   background-color: transparent; }
 
@@ -89,9 +88,9 @@ body {
 @media (min-width: 768px) {
   .masthead-brand {
     float: left; }
-
   .masthead-nav {
     float: right; } }
+
 .cover {
   padding: 0 20px; }
 
@@ -111,7 +110,7 @@ body {
   width: 100%;
   height: 60px;
   background: #333333;
-  opacity: .7;
+  opacity: 0.7;
   position: absolute;
   top: 10px; }
 
@@ -120,29 +119,24 @@ body {
  */
 @media (min-width: 768px) {
   /* Pull out the header and footer */
+  /* Start the vertical centering */
+  /* Handle the widths */
   .masthead {
     position: fixed;
     top: 0; }
-
   .mastfoot {
     position: fixed;
     bottom: 0; }
-
-  /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle; }
-
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
+  .masthead, .mastfoot, .cover-container {
     width: 100%;
     /* Must be percentage or pixels for horizontal alignment */ } }
+
 @media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
+  .masthead, .mastfoot, .cover-container {
     width: 100%; } }
+
 .floating-image {
   position: absolute;
   top: 120px;
@@ -152,9 +146,38 @@ body {
   .floating-image img {
     border: 5px solid #2b542c; }
 
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto; }
+  .form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px; }
+  .form-signin .checkbox {
+    font-weight: normal; }
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px; }
+  .form-signin .form-control:focus {
+    z-index: 2; }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+
 .calendar-wrapper {
   padding: 20px;
   background: rgba(68, 68, 68, 0.4);
   margin: 0 15% 0 15%; }
   .calendar-wrapper #calendar-anchor {
     opacity: 1; }
+
+/*# sourceMappingURL=ideboaas.css.map */

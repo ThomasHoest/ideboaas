@@ -16,9 +16,9 @@
           <div class="inner">
             <h3 class="masthead-brand">Ideboaas</h3>
             <ul class="nav masthead-nav">
-              <li class="active"><a href="main.html">Home</a></li>
-              <li><a href="booking.html">Booking</a></li>
-              <li><a href="billeder.html">Billeder</a></li>
+              <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+              <li>@Html.ActionLink("Booking", "Index", "Booking")</li>
+              <li>@Html.ActionLink("Billeder", "Index", "Media")</li>
               <li>@Html.ActionLink("Login", "Login", "Account")</li>
             </ul>
           </div>
@@ -33,5 +33,6 @@
     </div>
   </div>
   @Scripts.Render("~/bundles/js")
+  @RenderSection("Scripts", false)
 </body>
 </html>
