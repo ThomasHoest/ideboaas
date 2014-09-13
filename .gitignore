@@ -6,3 +6,5 @@ packages/*/*
 *.suo
 IdeboaasWeb/obj/*
 IdeboaasWeb/bin/*
+IdeboaasWeb/App_Data/aspnet-IdeboaasWeb-20140826085411.mdf
+IdeboaasWeb/App_Data/aspnet-IdeboaasWeb-20140826085411_log.ldf
