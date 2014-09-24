@@ -13,7 +13,7 @@ namespace IdeboaasWeb
                   "~/Scripts/vendor/bootstrap.js",
                   "~/Scripts/vendor/docs.min.js",
                   "~/Scripts/vendor/moment.min.js",
-                  "~/Scripts/vendor/fullcalender.js"
+                  "~/Scripts/vendor/fullcalendar.js"
                   ));
 
       bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -21,6 +21,7 @@ namespace IdeboaasWeb
 
       bundles.Add(new StyleBundle("~/Content/css").Include(
         "~/Content/vendor/bootstrap.css",
+        "~/Content/vendor/fullcalendar.css",
         "~/Content/sass/ideboaas.css"));
 
       // Set EnableOptimizations to false for debugging. For more information,

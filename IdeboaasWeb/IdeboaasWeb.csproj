@@ -161,6 +161,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,6 +206,8 @@
       <DependentUpon>ideboaas.css</DependentUpon>
     </Content>
     <None Include="Scripts\vendor\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\vendor\fullcalendar.js" />
+    <Content Include="Scripts\vendor\fullcalendar.min.js" />
     <Content Include="Scripts\vendor\jquery-1.10.2.js" />
     <Content Include="Scripts\vendor\jquery-1.10.2.min.js" />
     <None Include="Scripts\vendor\jquery.validate-vsdoc.js" />
@@ -212,6 +216,8 @@
     <Content Include="Scripts\vendor\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\vendor\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\vendor\modernizr-2.6.2.js" />
+    <Content Include="Scripts\vendor\moment.js" />
+    <Content Include="Scripts\vendor\moment.min.js" />
     <Content Include="Scripts\vendor\respond.js" />
     <Content Include="Scripts\vendor\respond.min.js" />
     <Content Include="Scripts\vendor\_references.js" />
@@ -245,6 +251,8 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

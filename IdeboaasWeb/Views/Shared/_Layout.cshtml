@@ -36,5 +36,10 @@
   </div>
   @Scripts.Render("~/bundles/js")
   @RenderSection("Scripts", false)
+  <script type="text/javascript">
+    if (page) {
+      page.initialize();
+    }
+  </script>
 </body>
 </html>
