@@ -15,12 +15,14 @@
         <div class="masthead clearfix">
           <div class="inner">
             <h3 class="masthead-brand">Ideboaas</h3>
+            @Html.Partial("_LoginPartial")
             <ul class="nav masthead-nav">
               <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
               <li>@Html.ActionLink("Booking", "Index", "Booking")</li>
               <li>@Html.ActionLink("Billeder", "Index", "Media")</li>
-              <li>@Html.ActionLink("Login", "Login", "Account")</li>
+              @*<li>@Html.ActionLink("Login", "Login", "Account")</li>*@
             </ul>
+
           </div>
         </div>
         @RenderBody()

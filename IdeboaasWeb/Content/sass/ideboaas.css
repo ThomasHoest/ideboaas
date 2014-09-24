@@ -54,7 +54,7 @@ body {
 
 /* Padding for spacing */
 .inner {
-  padding: 20px 10% 20px 10%;
+  padding: 20px 2% 20px 10%;
   z-index: 100; }
 
 /*
@@ -64,31 +64,45 @@ body {
   margin-top: 10px;
   margin-bottom: 10px; }
 
-.masthead-nav > li {
-  display: inline-block; }
-.masthead-nav > li + li {
+.masthead-authenticated {
   margin-left: 20px; }
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  /* IE8 proofing */
-  color: rgba(255, 255, 255, 0.75);
-  border-bottom: 2px solid transparent; }
-.masthead-nav > li > a:hover, .masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255, 255, 255, 0.25); }
-.masthead-nav > .active > a, .masthead-nav > .active > a:hover, .masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff; }
+  .masthead-authenticated > li > a {
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.75); }
+  .masthead-authenticated > li > a:hover, .masthead-authenticated > li > a:focus {
+    background-color: transparent; }
+
+.masthead-nav {
+  margin-right: 5%; }
+  .masthead-nav > li {
+    display: inline-block; }
+  .masthead-nav > li + li {
+    margin-left: 20px; }
+  .masthead-nav > li > a {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    /* IE8 proofing */
+    color: rgba(255, 255, 255, 0.75);
+    border-bottom: 2px solid transparent; }
+  .masthead-nav > li > a:hover, .masthead-nav > li > a:focus {
+    background-color: transparent;
+    border-bottom-color: #a9a9a9;
+    border-bottom-color: rgba(255, 255, 255, 0.25); }
+  .masthead-nav > .active > a, .masthead-nav > .active > a:hover, .masthead-nav > .active > a:focus {
+    color: #fff;
+    border-bottom-color: #fff; }
 
 @media (min-width: 768px) {
   .masthead-brand {
     float: left; }
   .masthead-nav {
+    float: right; }
+  .masthead-authenticated {
     float: right; } }
 
 .cover {
