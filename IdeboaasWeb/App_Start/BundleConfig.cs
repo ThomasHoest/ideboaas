@@ -13,7 +13,7 @@ namespace IdeboaasWeb
                   "~/Scripts/vendor/bootstrap.js",
                   "~/Scripts/vendor/docs.min.js",
                   "~/Scripts/vendor/moment.min.js",
-                  "~/Scripts/vendor/fullcalendar.js"
+                  "~/Scripts/vendor/fullcalendar.min.js"
                   ));
 
       bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
