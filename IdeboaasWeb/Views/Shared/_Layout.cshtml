@@ -19,7 +19,8 @@
             <ul class="nav masthead-nav">
               <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
               <li>@Html.ActionLink("Booking", "Index", "Booking")</li>
-              <li>@Html.ActionLink("Billeder", "Index", "Media")</li>
+              <li>@Html.ActionLink("Billeder", "Index", "Images")</li>
+              <li>@Html.ActionLink("Vejledning", "Index", "Instructions")</li>
               @*<li>@Html.ActionLink("Login", "Login", "Account")</li>*@
             </ul>
 
@@ -37,8 +38,8 @@
   @Scripts.Render("~/bundles/js")
   @RenderSection("Scripts", false)
   <script type="text/javascript">
-    if (page) {
-      page.initialize();
+    if (window.page) {
+      window.page.initialize();
     }
   </script>
 </body>
