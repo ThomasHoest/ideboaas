@@ -22,6 +22,7 @@ namespace IdeboaasWeb
       bundles.Add(new StyleBundle("~/Content/css").Include(
         "~/Content/vendor/bootstrap.css",
         "~/Content/vendor/fullcalendar.css",
+        "~/Content/vendor/animate.css",
         "~/Content/sass/ideboaas.css"));
 
       // Set EnableOptimizations to false for debugging. For more information,

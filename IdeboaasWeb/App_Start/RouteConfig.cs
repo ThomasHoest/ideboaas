@@ -18,18 +18,6 @@ namespace IdeboaasWeb
           url: "{controller}/{action}/{id}",
           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
       );
-
-      //routes.MapRoute(
-      //    name: "Booking",
-      //    url: "Booking/{action}/{id}",
-      //    defaults: new { controller = "booking", action = "Index", id = UrlParameter.Optional }
-      //);
-
-      //routes.MapRoute(
-      //    name: "Booking",
-      //    url: "Booking/{action}/{id}",
-      //    defaults: new { controller = "booking", action = "Index", id = UrlParameter.Optional }
-      //);
     }
   }
 }
