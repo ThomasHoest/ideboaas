@@ -176,7 +176,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\images\background.jpg" />
+    <Content Include="Content\images\background_0.jpg" />
+    <Content Include="Content\images\background_1.jpg" />
+    <Content Include="Content\images\background_2.jpg" />
+    <Content Include="Content\images\background_3.jpg" />
+    <Content Include="Content\images\background_4.jpg" />
     <Content Include="Content\images\huset.jpg" />
     <Content Include="Content\sass\ideboaas.css" />
     <Content Include="Content\sass\ideboaas.min.css">
