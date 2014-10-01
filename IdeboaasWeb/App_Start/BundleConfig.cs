@@ -16,6 +16,9 @@ namespace IdeboaasWeb
                   "~/Scripts/vendor/fullcalendar.min.js"
                   ));
 
+      bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                  "~/Scripts/common.js"));
+
       bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                   "~/Scripts/jquery.validate*"));
 

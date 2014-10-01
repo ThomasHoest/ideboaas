@@ -22,26 +22,26 @@
             <h3 class="masthead-brand">Ideboaas</h3>
             @Html.Partial("_LoginPartial")
             <ul class="nav masthead-nav">
-              <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-              <li>@Html.ActionLink("Historie", "History", "Home")</li>
-              <li>@Html.ActionLink("Booking", "Index", "Booking")</li>
-              <li>@Html.ActionLink("Billeder", "Index", "Images")</li>
-              <li>@Html.ActionLink("Vejledning", "Index", "Instructions")</li>
+              <li class="nav-home">@Html.ActionLink("Home", "Index", "Home")</li>
+              <li class="nav-history">@Html.ActionLink("Historie", "History", "Home")</li>
+              <li class="nav-booking">@Html.ActionLink("Booking", "Index", "Booking")</li>
+              <li class="nav-images">@Html.ActionLink("Billeder", "Index", "Images")</li>
+              <li class="nav-instructions">@Html.ActionLink("Vejledning", "Index", "Instructions")</li>
               @*<li>@Html.ActionLink("Login", "Login", "Account")</li>*@
             </ul>
-
           </div>
         </div>
         @RenderBody()
         <div class="mastfoot">
           <div class="inner">
-            <p>By Thomas Andersen with Twitter Boostrap</p>
+            <p>By Thomas Andersen with Twitter Bootstrap</p>
           </div>
         </div>
       </div>
     </div>
   </div>
   @Scripts.Render("~/bundles/js")
+  @Scripts.Render("~/bundles/app")
   @RenderSection("Scripts", false)
   <script type="text/javascript">
     if (window.page) {
