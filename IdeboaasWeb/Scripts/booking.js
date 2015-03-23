@@ -4,17 +4,20 @@
 
 var page = new function(){  
   this.initialize = function () {
-    $('#calendar-anchor').fullCalendar({
+    var calender = $('#calendar-anchor').fullCalendar({
       aspectRatio: 3,
-      events: [
-        {
-          title: 'Some booking',
-          start: '2014-08-17',
-          end: '2014-08-27',
-          color: 'blue'
-        }
-      ]
+      events: bookings
     });
+    
+    $('#save-booking').click(function() {
+      var booking = {
+        from : $('#booking-from').text(),
+        to : $('#booking-to').text(),
+        title: "booking",
+        color : 'blue'
+      }
+    });
+
   }
 }
 

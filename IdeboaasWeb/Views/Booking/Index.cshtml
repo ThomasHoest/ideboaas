@@ -1,14 +1,29 @@
-﻿@{
-    ViewBag.Title = "Booking";    
-}
+﻿@using IdeboaasWeb.Controllers
+@using Newtonsoft.Json
+@model IdeboaasWeb.Controllers.CalenderContents
+
 <script type="text/javascript">
   var active = "nav-booking";
+  var bookings = [];
+  @foreach (Booking b in Model.Bookings)
+  {
+    @:var b = @Html.Raw(JsonConvert.SerializeObject(b));
+    @:bookings.push(b);
+  }
 </script>
 
 <div class="inner cover">
   <h1 class="cover-heading">Booking</h1>
   <div class="calendar-wrapper">
     <div id="calendar-anchor"></div>
-  </div>  
-</div> 
+  </div>
+  <div class="booking-controls">
+    <h3>Ny bookning</h3>
+    <label>Fra</label>
+    <input id="booking-from" type="text" />
+    <label>Til</label>
+    <input id="booking-to" type="text" />
+    <button id="save-booking">Gem</button>
+  </div>
+</div>
 <script src="~/Scripts/booking.js"></script>
