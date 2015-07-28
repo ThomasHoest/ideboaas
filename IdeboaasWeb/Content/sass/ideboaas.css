@@ -201,4 +201,7 @@ body {
   .calendar-wrapper #calendar-anchor {
     opacity: 1; }
 
+.booking-controls {
+  width: 400px; }
+
 /*# sourceMappingURL=ideboaas.css.map */

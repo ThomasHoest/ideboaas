@@ -1,52 +1,53 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript">
-    var html = document.getElementsByTagName("html")[0];
-    var num = Math.floor((Math.random() * 1000) + 1) % 5;
-    html.style.background = "url('/Content/images/background_"+num+".jpg') no-repeat center center fixed";
-  </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@ViewBag.Title - My ASP.NET Application</title>
-  @Styles.Render("~/Content/css")
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript">
+        var html = document.getElementsByTagName("html")[0];
+        var num = Math.floor((Math.random() * 1000) + 1) % 5;
+        html.style.background = "url('/Content/images/background_" + num + ".jpg') no-repeat center center fixed";
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-      <div class="masthead-background"></div>
-      <div class="cover-container">
-        <div class="masthead clearfix">
-          <div class="inner">
-            <h3 class="masthead-brand">Ideboås</h3>
-            @Html.Partial("_LoginPartial")
-            <ul class="nav masthead-nav">
-              <li class="nav-home">@Html.ActionLink("Home", "Index", "Home")</li>
-              <li class="nav-history">@Html.ActionLink("Historie", "History", "Home")</li>
-              <li class="nav-booking">@Html.ActionLink("Booking", "Index", "Booking")</li>
-              <li class="nav-images">@Html.ActionLink("Billeder", "Index", "Images")</li>
-              <li class="nav-instructions">@Html.ActionLink("Vejledning", "Index", "Instructions")</li>
-              @*<li>@Html.ActionLink("Login", "Login", "Account")</li>*@
-            </ul>
-          </div>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="masthead-background"></div>
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">Ideboås</h3>
+                        @Html.Partial("_LoginPartial")
+                        <ul class="nav masthead-nav">
+                            <li class="nav-home">@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="nav-history">@Html.ActionLink("Historie", "History", "Home")</li>
+                            <li class="nav-booking">@Html.ActionLink("Booking", "Index", "Booking")</li>
+                            <li class="nav-images">@Html.ActionLink("Billeder", "Index", "Images")</li>
+                            <li class="nav-instructions">@Html.ActionLink("Vejledning", "Index", "Instructions")</li>
+                            <li class="nav-route">@Html.ActionLink("Rute", "Index", "Route")</li>
+                            @*<li>@Html.ActionLink("Login", "Login", "Account")</li>*@
+                        </ul>
+                    </div>
+                </div>
+                @RenderBody()
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>By Thomas Andersen with Twitter Bootstrap</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        @RenderBody()
-        <div class="mastfoot">
-          <div class="inner">
-            <p>By Thomas Andersen with Twitter Bootstrap</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  @Scripts.Render("~/bundles/js")
-  @Scripts.Render("~/bundles/app")
-  @RenderSection("Scripts", false)
-  <script type="text/javascript">
-    if (window.page) {
-      window.page.initialize();
-    }
-  </script>
+    @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("Scripts", false)
+    <script type="text/javascript">
+        if (window.page) {
+            window.page.initialize();
+        }
+    </script>
 </body>
 </html>

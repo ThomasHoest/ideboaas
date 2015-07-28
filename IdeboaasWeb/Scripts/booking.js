@@ -9,13 +9,17 @@ var page = new function(){
       events: bookings
     });
     
-    $('#save-booking').click(function() {
+    $('#save-booking').on('click',function() {
       var booking = {
-        from : $('#booking-from').text(),
-        to : $('#booking-to').text(),
+        start: $('#booking-from').text(),
+        end: $('#booking-to').text(),
         title: "booking",
-        color : 'blue'
-      }
+        color: 'blue'
+      };
+
+      $.post("Booking/book", booking, function() {
+        
+      });
     });
 
   }
