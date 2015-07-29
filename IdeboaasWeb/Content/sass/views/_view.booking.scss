@@ -10,6 +10,20 @@
 }
 
 .booking-controls{
-  width:400px;
+  >*{
+      display:inline-block;   
+      margin:0 5px 0 5px;   
+  }
+  select{
+      width:80px;
+  }
+  
+  input[type="text"]{
+      width:200px;
+  }
+
+  button{
+      width:100px;
+  }
 }
 

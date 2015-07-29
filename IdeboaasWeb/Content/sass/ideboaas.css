@@ -100,13 +100,16 @@ body {
 @media (min-width: 768px) {
   .masthead-brand {
     float: left; }
+
   .masthead-nav {
     float: right; }
+
   .masthead-authenticated {
-    float: right; } }
+    float: right; }
+ }
 
 .cover {
-  padding: 0 20px; }
+  padding: 90px 20px 70px 20px; }
 
 .cover .btn-lg {
   padding: 10px 20px;
@@ -129,27 +132,39 @@ body {
   top: 10px; }
 
 /*
+ * Modals
+ */
+.modal-content {
+  color: #333;
+  text-shadow: none; }
+
+/*
  * Affix and center
  */
 @media (min-width: 768px) {
   /* Pull out the header and footer */
-  /* Start the vertical centering */
-  /* Handle the widths */
   .masthead {
     position: fixed;
     top: 0; }
+
   .mastfoot {
     position: fixed;
     bottom: 0; }
+
+  /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle; }
+
+  /* Handle the widths */
   .masthead, .mastfoot, .cover-container {
     width: 100%;
-    /* Must be percentage or pixels for horizontal alignment */ } }
+    /* Must be percentage or pixels for horizontal alignment */ }
+ }
 
 @media (min-width: 992px) {
   .masthead, .mastfoot, .cover-container {
-    width: 100%; } }
+    width: 100%; }
+ }
 
 .floating-image {
   position: absolute;
@@ -201,7 +216,14 @@ body {
   .calendar-wrapper #calendar-anchor {
     opacity: 1; }
 
-.booking-controls {
-  width: 400px; }
+.booking-controls > * {
+  display: inline-block;
+  margin: 0 5px 0 5px; }
+.booking-controls select {
+  width: 80px; }
+.booking-controls input[type="text"] {
+  width: 200px; }
+.booking-controls button {
+  width: 100px; }
 
 /*# sourceMappingURL=ideboaas.css.map */

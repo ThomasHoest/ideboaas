@@ -3,27 +3,30 @@
 @model IdeboaasWeb.Controllers.CalenderContents
 
 <script type="text/javascript">
-  var active = "nav-booking";
-  var bookings = [];
-  @foreach (Booking b in Model.Bookings)
+    var active = "nav-booking";
+    var bookings = [];
+    @foreach (Booking b in Model.Bookings)
   {
     @:var b = @Html.Raw(JsonConvert.SerializeObject(b));
-    @:bookings.push(b);
-  }
+        @:bookings.push(b);
+      }
 </script>
 
 <div class="inner cover">
-  <h1 class="cover-heading">Booking</h1>
-  <div class="calendar-wrapper">
-    <div id="calendar-anchor"></div>
-  </div>
-  <div class="booking-controls">
-    <h3>Ny bookning</h3>
-    <label>Fra</label>
-    <input class="form-control" id="booking-from" type="text" />
-    <label>Til</label>
-    <input class="form-control" id="booking-to" type="text" />
-    <button type="button" class="btn btn-lg btn-primary btn-block" id="save-booking">Gem</button>
-  </div>
+    <h1 class="cover-heading">Booking</h1>
+    <div class="calendar-wrapper">
+        <div id="calendar-anchor"></div>
+    </div>
+    <div class="booking-controls">
+        <h2>Ny bookning</h2>
+        <h3 id="current-booking"></h3>
+        <select id="booking-type" class="form-control">
+            <option>Blå</option>
+            <option>Rød</option>
+        </select>
+        <label>Navn:</label>
+        <input id="booking-name" class="form-control" type="text" />
+        <button type="button" class="btn btn-lg btn-primary btn-block" id="save-booking">Gem</button>
+    </div>
 </div>
 <script src="~/Scripts/booking.js"></script>

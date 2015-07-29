@@ -1,10 +1,1 @@
-﻿[
-  "events":
-  [
-    {
-      "title": "Some booking",
-      "start": "2014-08-17",
-      "end": "2014-08-27",
-      "color": "blue"
-    }
-  ]
+[{"title":"Some booking","start":"2015-07-17","end":"2015-07-31","color":"blue","owner":null},{"title":"sdcsdc","start":"2015-07-13","end":"2015-07-17","color":"Blå","owner":null}]
