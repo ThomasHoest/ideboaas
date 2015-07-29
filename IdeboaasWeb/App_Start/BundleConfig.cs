@@ -11,9 +11,9 @@ namespace IdeboaasWeb
       bundles.Add(new ScriptBundle("~/bundles/js").Include(
                   "~/Scripts/vendor/jquery-{version}.js",
                   "~/Scripts/vendor/bootstrap.js",
-                  "~/Scripts/vendor/docs.min.js",
-                  "~/Scripts/vendor/moment.min.js",
-                  "~/Scripts/vendor/fullcalendar.min.js"
+                  "~/Scripts/vendor/docs.js",
+                  "~/Scripts/vendor/moment.js",
+                  "~/Scripts/vendor/fullcalendar.js"
                   ));
 
       bundles.Add(new ScriptBundle("~/bundles/app").Include(

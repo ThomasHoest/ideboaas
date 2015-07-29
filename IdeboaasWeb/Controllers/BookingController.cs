@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
+using System.Text;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 
@@ -17,7 +15,7 @@ namespace IdeboaasWeb.Controllers
         }
 
         //
-        // POST: /Account/Book
+        // POST: /Booking/Book
         [HttpPost]
         public void Book(Booking booking)
         {
@@ -31,6 +29,25 @@ namespace IdeboaasWeb.Controllers
             }
         }
 
+        // DELETE: /Booking/Book
+        [HttpPost]
+        public void Delete(string title)
+        {
+            if (title != null)
+            {
+                CalenderContents cc = ReadBookings();
+                var bookings = new List<Booking>(cc.Bookings);
+
+                var booking = bookings.FirstOrDefault(b => b.title == title);
+                if (booking != null)
+                {
+                    bookings.Remove(booking);
+                    cc.Bookings = bookings.ToArray();
+                    SaveBookings(cc);    
+                }
+            }
+        }
+
         private CalenderContents ReadBookings()
         {
             string path = HttpContext.Server.MapPath("~/App_Data/bookings.json");
@@ -40,12 +57,11 @@ namespace IdeboaasWeb.Controllers
                 json = sr.ReadToEnd();
             }
 
-            CalenderContents cc = new CalenderContents();
-
-            if (!string.IsNullOrEmpty(json))
+            CalenderContents cc = new CalenderContents
             {
-                cc.Bookings = JsonConvert.DeserializeObject<Booking[]>(json);
-            }
+                Bookings = !string.IsNullOrEmpty(json) ? JsonConvert.DeserializeObject<Booking[]>(json) : new Booking[] {}
+            };
+
             return cc;
         }
 
@@ -53,9 +69,12 @@ namespace IdeboaasWeb.Controllers
         {
             string path = HttpContext.Server.MapPath("~/App_Data/bookings.json");
             string json;
-            using (StreamWriter sw = new StreamWriter(new FileStream(path, FileMode.Open)))
+            using (FileStream fs =new FileStream(path, FileMode.Open))
             {
-                sw.WriteLine(JsonConvert.SerializeObject(cc.Bookings));
+                byte[] data = UTF8Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(cc.Bookings));
+                fs.Position = 0;
+                fs.Write(data,0,data.Length);
+                fs.SetLength(data.Length);
             }
         }
     }
@@ -67,6 +86,7 @@ namespace IdeboaasWeb.Controllers
 
     public class Booking
     {
+        public string id { get; set; }
         public string title { get; set; }
         public string start { get; set; }
         public string end { get; set; }

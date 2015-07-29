@@ -15,22 +15,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <div id="small-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="small-modal-title">Oops</h4>
-                </div>
-                <div class="modal-body">
-                    <p id="small-modal-content" for="message-text"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="masthead-background"></div>
@@ -62,10 +46,43 @@
     @Scripts.Render("~/bundles/js")
     @Scripts.Render("~/bundles/app")
     @RenderSection("Scripts", false)
-    <script type="text/javascript">
-        if (window.page) {
-            window.page.initialize();
-        }
-    </script>
+<script type="text/javascript">
+    if (window.page) {
+        window.page.initialize();
+    }
+</script>
+    <div id="small-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="small-modal-title">Oops</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="small-modal-content" for="message-text"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="delete-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="small-modal-title">Slet booking</h4>
+                </div>
+                <div class="modal-body">
+                    <p for="message-text">Vil du slette denne bookning?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-ok">Ok</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

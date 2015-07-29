@@ -5,11 +5,14 @@
 <script type="text/javascript">
     var active = "nav-booking";
     var bookings = [];
-    @foreach (Booking b in Model.Bookings)
-  {
-    @:var b = @Html.Raw(JsonConvert.SerializeObject(b));
-        @:bookings.push(b);
-      }
+    @if (Model.Bookings != null) {
+        foreach (Booking b in Model.Bookings)
+        {
+            @:var b = @Html.Raw(JsonConvert.SerializeObject(b));
+                @:bookings.push(b);
+        }
+    }
+    var eventSource = { events: bookings };
 </script>
 
 <div class="inner cover">

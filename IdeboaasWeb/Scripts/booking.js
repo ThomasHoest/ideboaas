@@ -15,22 +15,68 @@ var page = new function () {
         $("#current-booking").first().text(start.format("DD-MM-YYYY") + " - " + end.format("DD-MM-YYYY"));
     }
 
+    this.editBooking = function(event) {
+        var $modal = $("#delete-modal");
+        $modal.one("show.bs.modal", function(e) {
+            $(this).find(".btn-ok").one("click", function () {
+                $.post("Booking/delete", { title: event.title }, function () {
+                    $('#calendar-anchor').fullCalendar("removeEventSource", eventSource);
+                    var index = eventSource.events.indexOf(event);
+                    if (index !== -1) {
+                        eventSource.events.splice(index, 1);
+                        $('#calendar-anchor').fullCalendar("addEventSource", eventSource);
+                    }
+                });
+                //$.ajax({
+                //    url: "Booking/book",
+                //    dataType: "json",
+                //    type: "DELETE",
+                //    contentType: "application/json; charset=UTF-8",
+                //    data: event.title,
+                //    async: true,
+                //    processData: false,
+                //    cache: false,
+                //    error:function(xhr) {
+                        
+                //    }
+                //});
+                $modal.modal("hide");
+            });
+            
+        });
+        $modal.modal("show");
+    }
+
+    this.guid = function(){
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+          s4() + '-' + s4() + s4() + s4();
+    }
+
     this.initialize = function () {
-        var calender = $('#calendar-anchor').fullCalendar({
+        $('#calendar-anchor').fullCalendar({
             aspectRatio: 3,
-            events: bookings,
+            //events: bookings,
             selectable: true,
+            eventClick:this.editBooking,
             select: this.selection
         });
-        var self = this;
+        $('#calendar-anchor').fullCalendar("addEventSource", eventSource);
         $('#save-booking').on('click', function () {
-            if (self._currentBooking.start) {
+            if (page._currentBooking.start) {
                 var name = $("#booking-name")[0].value;
                 var type = $("#booking-type option:selected").text();
-                self._currentBooking.title = name;
-                self._currentBooking.color = type;
-                $.post("Booking/book", self._currentBooking, function() {
-
+                page._currentBooking.title = name;
+                page._currentBooking.color = type === "Blå" ? "blue" : "red";
+                page._currentBooking.id = page.guid();
+                $.post("Booking/book", page._currentBooking, function () {
+                    $('#calendar-anchor').fullCalendar("removeEventSource", eventSource);
+                    eventSource.events.push(page._currentBooking);
+                    $('#calendar-anchor').fullCalendar("addEventSource", eventSource);
                 });
             } else {
                 var $modal = $("#small-modal");
