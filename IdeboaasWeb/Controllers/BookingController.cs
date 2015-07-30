@@ -52,7 +52,7 @@ namespace IdeboaasWeb.Controllers
         {
             string path = HttpContext.Server.MapPath("~/App_Data/bookings.json");
             string json;
-            using (StreamReader sr = new StreamReader(new FileStream(path, FileMode.Open)))
+            using (StreamReader sr = new StreamReader(new FileStream(path, FileMode.OpenOrCreate)))
             {
                 json = sr.ReadToEnd();
             }
