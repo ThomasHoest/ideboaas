@@ -19,18 +19,20 @@ var page = new function () {
         var $modal = $("#delete-modal");
         $modal.one("show.bs.modal", function(e) {
             $(this).find(".btn-ok").one("click", function () {
-                $.post("Booking/delete", { id: event.id }, function () {
-                    $('#calendar-anchor').fullCalendar("removeEventSource", eventSource);
-                    var ev = _.find(eventSource.events, function(e) { return e.id === event.id; });
-                    if (ev) {
-                        var index = eventSource.events.indexOf(ev);
-                        if (index !== -1) {
-                            eventSource.events.splice(index, 1);
-                            $('#calendar-anchor').fullCalendar("addEventSource", eventSource);
-                        }
-                    }
-                });
                 $modal.modal("hide");
+                page.verifyPassword().done(function() {
+                    $.post("Booking/delete", { id: event.id }, function () {
+                        $('#calendar-anchor').fullCalendar("removeEventSource", eventSource);
+                        var ev = _.find(eventSource.events, function (e) { return e.id === event.id; });
+                        if (ev) {
+                            var index = eventSource.events.indexOf(ev);
+                            if (index !== -1) {
+                                eventSource.events.splice(index, 1);
+                                $('#calendar-anchor').fullCalendar("addEventSource", eventSource);
+                            }
+                        }
+                    });
+                });
             });
             
         });
@@ -64,12 +66,14 @@ var page = new function () {
                 page._currentBooking.title = name;
                 page._currentBooking.color = type === "Blå" ? "blue" : "red";
                 page._currentBooking.id = page.guid();
-                $.post("Booking/book", page._currentBooking, function () {
-                    $('#calendar-anchor').fullCalendar("removeEventSource", eventSource);
-                    eventSource.events.push(page._currentBooking);
-                    $('#calendar-anchor').fullCalendar("addEventSource", eventSource);
-                    nameInput.value = "";
-                    $(".booking-controls").hide();
+                page.verifyPassword().done(function() {
+                    $.post("Booking/book", page._currentBooking, function () {
+                        $('#calendar-anchor').fullCalendar("removeEventSource", eventSource);
+                        eventSource.events.push(page._currentBooking);
+                        $('#calendar-anchor').fullCalendar("addEventSource", eventSource);
+                        nameInput.value = "";
+                        $(".booking-controls").hide();
+                    });
                 });
             } else {
                 var $modal = $("#small-modal");
@@ -78,6 +82,29 @@ var page = new function () {
             }
         });
 
+    }
+
+    this.verifyPassword = function() {
+        var deferred = $.Deferred();
+        var $modal = $("#password-modal");
+        $modal.one("show.bs.modal", function (e) {
+            $(this).find(".btn-ok").one("click", function () {
+                var inputPass = $("#password-input")[0];
+                var pass = inputPass.value;
+                $.post("Booking/password", { password: pass }, function (data) {
+                    if (data === "True") {
+                        deferred.resolve();
+                    } else {
+                        deferred.reject();
+                    }
+                });
+                inputPass.value = "";
+                $modal.modal("hide");
+            });
+
+        });
+        $modal.modal("show");
+        return deferred.promise();
     }
 }
 

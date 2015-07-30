@@ -17,6 +17,14 @@ namespace IdeboaasWeb.Controllers
         //
         // POST: /Booking/Book
         [HttpPost]
+        public bool Password(string password)
+        {
+            return password == "magic";
+        }
+
+        //
+        // POST: /Booking/Book
+        [HttpPost]
         public void Book(Booking booking)
         {
             if (booking != null)

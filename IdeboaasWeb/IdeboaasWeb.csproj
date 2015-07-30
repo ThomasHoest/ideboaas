@@ -221,7 +221,6 @@
     <Content Include="Content\sass\ideboaas.css.map">
       <DependentUpon>ideboaas.css</DependentUpon>
     </Content>
-    <Content Include="App_Data\bookings.json" />
     <Content Include="Scripts\vendor\jquery-2.1.3.min.map" />
     <Content Include="Scripts\vendor\fullcalendar.min.js" />
     <None Include="Scripts\vendor\jquery.validate-vsdoc.js" />
@@ -268,7 +267,9 @@
     <Content Include="Views\Instructions\Index.cshtml" />
     <Content Include="Views\Route\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
