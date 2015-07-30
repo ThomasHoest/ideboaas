@@ -10,6 +10,7 @@ namespace IdeboaasWeb
     {
       bundles.Add(new ScriptBundle("~/bundles/js").Include(
                   "~/Scripts/vendor/jquery-{version}.js",
+                  "~/Scripts/vendor/underscore.js",
                   "~/Scripts/vendor/bootstrap.js",
                   "~/Scripts/vendor/docs.js",
                   "~/Scripts/vendor/moment.js",

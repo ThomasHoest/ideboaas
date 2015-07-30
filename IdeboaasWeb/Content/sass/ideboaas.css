@@ -216,14 +216,16 @@ body {
   .calendar-wrapper #calendar-anchor {
     opacity: 1; }
 
-.booking-controls > * {
-  display: inline-block;
-  margin: 0 5px 0 5px; }
-.booking-controls select {
-  width: 80px; }
-.booking-controls input[type="text"] {
-  width: 200px; }
-.booking-controls button {
-  width: 100px; }
+.booking-controls {
+  display: none; }
+  .booking-controls > * {
+    display: inline-block;
+    margin: 0 5px 0 5px; }
+  .booking-controls select {
+    width: 80px; }
+  .booking-controls input[type="text"] {
+    width: 200px; }
+  .booking-controls button {
+    width: 100px; }
 
 /*# sourceMappingURL=ideboaas.css.map */

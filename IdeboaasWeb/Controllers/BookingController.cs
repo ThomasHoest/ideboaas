@@ -31,14 +31,14 @@ namespace IdeboaasWeb.Controllers
 
         // DELETE: /Booking/Book
         [HttpPost]
-        public void Delete(string title)
+        public void Delete(string id)
         {
-            if (title != null)
+            if (id != null)
             {
                 CalenderContents cc = ReadBookings();
                 var bookings = new List<Booking>(cc.Bookings);
 
-                var booking = bookings.FirstOrDefault(b => b.title == title);
+                var booking = bookings.FirstOrDefault(b => b.id == id);
                 if (booking != null)
                 {
                     bookings.Remove(booking);
