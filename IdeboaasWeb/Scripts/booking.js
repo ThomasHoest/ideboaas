@@ -96,6 +96,7 @@ var page = new function () {
                         deferred.resolve();
                     } else {
                         deferred.reject();
+                        idebo.showMessage("Hmm, det var vist forkert?");
                     }
                 });
                 inputPass.value = "";

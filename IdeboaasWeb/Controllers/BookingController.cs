@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,7 @@ namespace IdeboaasWeb.Controllers
                 var bookings = new List<Booking>(cc.Bookings);
                 bookings.Add(booking);
                 cc.Bookings = bookings.ToArray();
+                LogBookingChange(cc, false);
                 SaveBookings(cc);
             }
         }
@@ -51,6 +53,7 @@ namespace IdeboaasWeb.Controllers
                 {
                     bookings.Remove(booking);
                     cc.Bookings = bookings.ToArray();
+                    LogBookingChange(cc, true);
                     SaveBookings(cc);    
                 }
             }
@@ -73,16 +76,36 @@ namespace IdeboaasWeb.Controllers
             return cc;
         }
 
-        private void SaveBookings(CalenderContents cc)
-        {
+        private void SaveBookings(CalenderContents cc){
+            
             string path = HttpContext.Server.MapPath("~/App_Data/bookings.json");
-            string json;
-            using (FileStream fs =new FileStream(path, FileMode.Open))
+            using (FileStream fs =new FileStream(path, FileMode.OpenOrCreate))
             {
                 byte[] data = UTF8Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(cc.Bookings));
                 fs.Position = 0;
                 fs.Write(data,0,data.Length);
                 fs.SetLength(data.Length);
+            }
+        }
+
+        private void LogBookingChange(CalenderContents cc, bool deleted)
+        {
+            try
+            {
+                string path = HttpContext.Server.MapPath("~/App_Data/booking.log");
+                using (FileStream fs = new FileStream(path, FileMode.Append))
+                {
+                    string heading = Environment.NewLine + Environment.NewLine;
+                    heading += (deleted ? "Deleted - " : "Added - ") + DateTime.Now + Environment.NewLine + Environment.NewLine;
+                    byte[] headingData = UTF8Encoding.UTF8.GetBytes(heading);
+                    fs.Write(headingData,0,headingData.Length);
+                    byte[] data = UTF8Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(cc.Bookings));
+                    fs.Write(data, 0, data.Length);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }

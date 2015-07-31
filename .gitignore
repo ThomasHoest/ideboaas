@@ -9,3 +9,4 @@ IdeboaasWeb/bin/*
 IdeboaasWeb/App_Data/aspnet-IdeboaasWeb-20140826085411.mdf
 IdeboaasWeb/App_Data/aspnet-IdeboaasWeb-20140826085411_log.ldf
 IdeboaasWeb/App_Data/bookings.json
+IdeboaasWeb/App_Data/booking.log
